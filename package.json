@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
+    "service1": "npm --prefix service1/ start",
+    "service2": "npm --prefix service2/ start",
+    "dev": "concurrently --kill-others \"npm run service1\" \"npm run service2\"",
+    "start": "npm run dev"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^8.2.2",
     "express": "^4.19.1"
   }
 }
