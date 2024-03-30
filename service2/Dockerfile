@@ -7,6 +7,6 @@ COPY . .
 WORKDIR /app
 RUN npm install --force
 
-EXPOSE 5050
+EXPOSE 8080
 
 CMD [ "npm", "start" ]
