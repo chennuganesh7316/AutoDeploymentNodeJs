@@ -6,6 +6,6 @@ app.get("/TestHello",async (req,res)=>{
 app.post("/createUser",async (req,res)=>{
     res.send({status:true,message:"code 2 backend services implemented"})
 })
-app.listen(4040,()=>{
+app.listen(8080,()=>{
     console.log(`server is running on port 8080`)
 })
