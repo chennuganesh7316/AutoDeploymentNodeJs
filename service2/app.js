@@ -6,6 +6,6 @@ app.get("/TestHello",async (req,res)=>{
 app.post("/createUser",async (req,res)=>{
     res.send({status:true,message:"user created scussfully"})
 })
-app.listen(5050,()=>{
+app.listen(80,()=>{
     console.log(`server is running on port 8080`)
 })
