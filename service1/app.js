@@ -1,7 +1,7 @@
 const exp=require("express")
 const app=exp()
 app.get("/TestHello",async (req,res)=>{
-    res.send({status:true,message:"code 1 backend services implemented changed    skjdskjkjsdjkjkbjksdbjkbsdsssss"})
+    res.send({status:true,message:"code 1 backend services implemented changed data"})
 })
 app.post("/createUser",async (req,res)=>{
     res.send({status:true,message:"code 2 backend services implemented"})
