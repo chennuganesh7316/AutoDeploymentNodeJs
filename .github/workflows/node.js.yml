@@ -1,18 +1,35 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: CI
 
 on:
   push:
-    branches: [ "dev" ]
-
+    branches:
+      - dev
+      - main
 
 jobs:
-  build:
+  job1:
+    runs-on: dev
+    if: github.ref == 'refs/heads/dev'
+    strategy:
+      matrix:
+        node-version: [21.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    runs-on: ip-172-31-25-23
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
+    - name: Manage Docker
+      run: |
+        cd $GITHUB_WORKSPACE
+        sudo docker-compose down 
+        sudo docker-compose up -d --build
+
+  job2:
+    runs-on: main
+    if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
         node-version: [21.x]
