@@ -10,7 +10,7 @@ on:
 
 jobs:
   job1:
-    runs-on: ip-172-31-25-23
+    runs-on: dev
     if: github.ref == 'refs/heads/dev'
     strategy:
       matrix:
@@ -28,7 +28,7 @@ jobs:
         sudo docker-compose up -d --build
 
   job2:
-    runs-on: ip-172-31-33-108
+    runs-on: main
     if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
