@@ -1,19 +1,12 @@
 version: "3.8"
 services:
-    frigate:
+    frigatev2-client:
         build:
             context: .
-        container_name: frigate
+        container_name: frigatev2-client
         restart: unless-stopped
         ports: 
-          - "7001:7001"
-          - "7002:7002"
-          - "7003:7003"
-          - "7004:7004"
-          - "7005:7005"
-          - "7006:7006"
-          - "7007:7007"
-          - "8080:8080"
+          - "4200:4200"
         networks:
           - nginxproxy_nginx_proxy
 
