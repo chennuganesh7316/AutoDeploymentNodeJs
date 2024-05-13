@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+    frigatev2-client:
+        build:
+            context: .
+        container_name: frigatev2-client
+        restart: unless-stopped
+        ports: 
+          - "4200:4200"
+       
