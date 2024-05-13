@@ -9,4 +9,4 @@ RUN npm install --force -g @angular/cli \
 
 COPY . .
 
-RUN npm run build
+RUN npm run build 
